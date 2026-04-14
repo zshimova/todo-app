@@ -1,28 +1,31 @@
 <script setup>
-import { ref } from "vue";
+const props = defineProps({
+    task: {
+        type: Object,
+    }
+});
 
-const items = [
-    { 
-        id: 1, 
-        task: "have a shower", 
+const buttonsConfig = [
+    {
+        label: "Edit",
+        action: "Edit",
     },
-    { 
-        id: 2, 
-        task: "buy fruits", 
+    {
+        label: "Delete",
+        action: "Delete",
     },
-    { 
-        id: 3, 
-        task: "walk with a dog", 
-    },
-];
+    {
+        label: "Done",
+        action: "Done"
+    }
+]
+
 </script>
 <template>
-  <div class="todo-item" v-for="item in items" :key="item.id">
-    <span class="todo-item__name">{{ item.task }}</span>
+  <div class="todo-item">
+    <span class="todo-item__name">{{ task.title }}</span>
     <div class="todo-item__functions">
-        <span class="todo-item__function --edit">редактировать</span>
-        <span class="todo-item__function --delete">удалить</span>
-        <span class="todo-item__function --done">готово</span>
+        <UIButton v-for="button in buttonsConfig" :key="button.action" :label="button.label"></UIButton>
     </div>
   </div>
 </template>

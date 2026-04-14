@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+   const props = defineProps({
+        label: {
+            type: String,
+            default: "Button"
+        },
+    });
+</script>
 <template>
-    <button>Add</button>
+    <button class="button">{{ label }}</button>
 </template>

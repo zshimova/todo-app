@@ -1,5 +1,5 @@
 <script setup>
-import TodoForm from '~/components/Todos/todoForm.vue';
+import TodoForm from '~/components/Todos/TodoForm.vue';
 
 </script>
 <template>
