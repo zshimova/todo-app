@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import TodoForm from '~/components/Todos/todoForm.vue';
+
+</script>
 <template>
-    <div>Hello! Welcome to main page</div>
+  <div class="todo">
+    <h1 class="todo__title">My tasks</h1>
+    <p class="todo__subtitle">Stay orginized and productive</p>
+    <TodoForm />
+  </div>
 </template>
